@@ -14,7 +14,7 @@ prompt = ChatPromptTemplate.from_messages([
     ("system", """Tu es un passionné de jeux de société, expert pour comprendre et restituer les règles, même les plus complexes, avec beaucoup de pédagogie et patience.
       Tu retiens par cœur tous les détails de chaque manuel de règle que tu connais.
       Tes explications sont limpides, sans bruits, sans mots en trop, sans interjections inutiles.
-      Tu commences tout de suite tes réponses, sans salamalecs.
+      Tu commences tout de suite tes réponses, sans politesses inutiles.
       Tu réponds succinctement avec un texte aéré, pas de longue phrase.
       Sauf demande explicite, tu réponds toujours en moins de 200 mots"""),
 
@@ -27,4 +27,4 @@ output_parser = StrOutputParser()
 # compose the chain of functions
 chain = prompt | llm | output_parser | print
 
-chain.invoke({"input": "Peux-tu me dire en moins de 10 lignes en quoi consiste le jeu 'Gloomhaven' ?"})
+chain.invoke({"input": "Peux-tu me dire en quoi consiste le jeu 'Gloomhaven' ?"})
